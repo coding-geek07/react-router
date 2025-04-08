@@ -1,13 +1,14 @@
 import React from "react";
-import { Link, NavLink, Outlet } from "react-router";
+import { Link, useParams } from "react-router";
 
 const ProductDetail = () => {
+  let params = useParams();
   return (
     <>
-      <h1>ProductsDetail</h1>
-      <Link to="..">Previous</Link>
-      <NavLink to="signin">Next</NavLink>
-      {/* <Outlet /> */}
+      <h1>Product Detail of {params.id} </h1>
+      <Link to=".." relative="path">
+        Previous
+      </Link>
     </>
   );
 };

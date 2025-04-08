@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import { createBrowserRouter } from "react-router";
 import Root from "./pages/Root";
 import ErrorPage from "./pages/ErrorPage";
+import ProductDetail from "./pages/ProductDetail";
 /**
  * Absolute vs Relative URL paths: ">" denotes nested elements
  * Absolute : /dashboard > /dashboard/profile > /dashboard/profile/product
@@ -23,7 +24,11 @@ const routes = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { path: "/", element: <Home /> },
-      { path: "products", element: <Products /> },
+      {
+        path: "products",
+        element: <Products />,
+        children: [{ path: ":id", element: <ProductDetail /> }],
+      },
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
     ],
