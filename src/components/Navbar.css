@@ -17,6 +17,14 @@
   font-weight: bold;
   cursor: pointer;
 }
-.link {
+.link a {
   color: white;
+  text-decoration: none;
+}
+.link a:hover,
+.link a:active {
+  text-decoration: underline;
+}
+.linkActive {
+  text-decoration: underline !important;
 }
